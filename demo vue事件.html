@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="handler">事件一</button>
+        <li v-for="(item,index) in lists">
+            {{ item }}
+            <button @click="remove(index)">点击删除</button>
+        </li>
+    </div>
+</body>
+<script src="../dep/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        methods:{
+            handler(){
+                alert(1)
+            },
+            remove(index){
+                this.lists.splice(index,1)
+            }
+        
+        },
+        data:{
+            lists:[1,2,3,4]
+        }
+    })
+</script>
+</html>

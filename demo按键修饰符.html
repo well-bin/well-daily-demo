@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="" id="" @keydown="fn">
+        <hr>
+        <input type="text" name="" id="" @keydown.13="handle" v-model="val">
+    </div>
+</body>
+<script src="../dep/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            val:''
+        },
+        methods:{
+            fn(e){
+                if(e.keyCode == 13){
+                    alert(e.target.value)
+                }
+            },
+            handle(){
+                alert(this.val)
+            }
+        }
+    })
+</script>
+</html>

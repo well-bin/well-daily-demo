@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .size{
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img :src="pic" alt="">
+        <div v-bind:class="{size:true,red:flag,blue:!flag}"></div>
+        <p v-bind:class="['size',flag?'red':'blue']"></p>
+        <p v-bind:style=" {width:big,height:'100px',background:'yellow'} "></p>
+    </div>
+</body>
+<script src="../dep/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            big:'100px',
+            flag:true,
+            pic:'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=93205362,4145297256&fm=26&gp=0.jpg'
+        }
+    })
+</script>
+</html>

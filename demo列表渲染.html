@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-for="item in num"> {{ item }} </p>
+        <p v-for="item in str">{{ item }}</p>
+        <p v-for="(val,key,index) in obj"> {{index+1}}.{{key}}:{{ val }} </p>
+        <ul>
+            <li v-for="item in lists">
+        <h3 >{{ item.goods }} </h3>
+        <p v-for="ele in item.dif">
+            {{ele}} </p>
+            </li>
+        </ul>
+        
+        
+    </div>
+</body>
+<script src="../dep/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            num:10,
+            str:'IloveY',
+            obj:{
+                name:'张三',
+                age:'20',
+                sex:'王五',
+            },
+            lists:[
+                {
+                id:1,
+                goods:'apple',
+                dif:['greenapple','redapple','blueapple']
+            },
+            {
+                id:2,
+                goods:'orange',
+                dif:['greenorange','redorange','blueorange']
+            }
+            
+        ]
+        }
+    })
+</script>
+</html>

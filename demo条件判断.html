@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>单路分支</h3>
+        <p v-if ="flag">真</p>
+        <h3>双路分支</h3>
+        <p v-if="flag">真</p>
+        <p v-else>假</p>
+        <h3>多路分支</h3>
+    </div>
+    
+</body>
+<script src="../dep/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            flag:true
+        }
+    })
+</script>
+</html>

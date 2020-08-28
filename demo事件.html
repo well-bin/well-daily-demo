@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .middle{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .small{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="big" @click.stop.once="bigfn">
+            <div class="middle" @click.stop="middlefn">
+                <div class="small" @click.stop="small"></div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="../dep/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        methods:{
+            bigfn(){
+                alert('big')
+            },
+            middlefn(){
+                alert('middle')
+            },
+            small(){
+                alert('small')
+            },
+        }
+    })
+</script>
+</html>
